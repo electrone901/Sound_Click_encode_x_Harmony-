@@ -175,6 +175,8 @@ function DonateNFT({
             onChange={(e) => setImageName(e.target.value)}
             required
           />
+          <br />
+          <br />
           <TextField
             fullWidth
             id="outlined-basic"
@@ -185,6 +187,7 @@ function DonateNFT({
             onChange={(e) => setDescription(e.target.value)}
             required
           />
+          <br />
 
           <input
             accept="image/*"

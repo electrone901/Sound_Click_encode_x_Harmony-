@@ -1,25 +1,31 @@
-Notes
 Hackathon: Harmony
-Add:
 
-- login => create profile with wallet address & avatar
-  `just like this page https://pets-found-me.netlify.app/my-profile`
-  `on that page add covalent apis`
-
+Harmony contract:  0xd9145CCE52D386f254917e481eB44e9943F39138
   - analysis report of transactions in the login page
     https://sound-click.netlify.app/store
-    `add a scrollable div, displays contracts transactions & maybe an activity pie/graph`
 
+* `Harmony` Network enables our application to be a scalable platform with fast transactions. We deployed our app on the Harmony Testnet Network.
+* `Solidity` for the smart contract.
+* `OpenZeppelin ERC721` we use the ERC721 template for faster development of our smart contract.
+* `Hardhat` for local blockchain development.
+* `React Js, Material-ui, Web3` React Js for the frontend, Material-ui, and Web3 to connect to the blockchain.
 # Project
 
-Sound Click & Moralis => MVP is completed with a landing page, marketplace and create beat, XMTP Chat and Table land for beats updates.
+SoundClick NFT
+
 
 # Description
-
 Welcome to Sound Click
 Sound Click was created for you; the writer, the performer, the beat maker, the producer, the engineer, the record label, the publisher, the videographer, the artist and the CREATOR. Sound Click was built for the person telling their story with music and to find like-minded people to experience it with. Music is the universal language that connects us across the globe. Music brings out our human emotions and music is the unified voice of the people.
 
-An Ecosystem built to support the use and the growth of Music projects by enabling participants to actively get involved in the network via theoretical and interactive educational content provided by the active communities of established Music projects.
+An Ecosystem built to support the use and the growth of Music projects by enabling participants to actively get involved in the network via theoretical and interactive educational content provided by the active communities of established Music projects using the Harmony network and Covalent APIs
+
+
+## Video
+https://youtu.be/67Lp7h7hG2Y
+
+# Website
+
 
 ### Valist Link
 

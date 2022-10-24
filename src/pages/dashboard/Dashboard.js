@@ -52,7 +52,8 @@ export const myData = {
   ],
 }
 
-export function Dashboard({ dataPie, covalentAllData }) {
+export function Dashboard({ dataPie, covalentAllData, contractDetails }) {
+  console.log('My 777contractDetails', contractDetails)
   const allData = covalentAllData
   const onlyNFTs = covalentAllData?.data?.items[2]?.nft_data
   return (
@@ -65,28 +66,77 @@ export function Dashboard({ dataPie, covalentAllData }) {
       }}
     >
       <Container>
-        {/* First part */}
+        {/* First part
+        contract_address
+:
+"0xf8f1c045b730f918527d6257f02c4b77c57c6518"
+contract_decimals
+:
+0
+contract_name
+:
+"BeatStore"
+contract_ticker_symbol
+:
+"BS"
+logo_url
+:
+"https://logos.covalenthq.com/tokens/1666700000/0xf8f1c045b730f918527d6257f02c4b77c57c6518.png"
+nft_transactions
+:
+[]
+supports_erc
+:
+['erc20']
+type
+:
+"nft"
+        */}
         <div className="container-flex ">
           <div>
             {allData ? (
               <>
-                <h1>All Tokens by Wallet Adddress</h1>
+                <h1>All Tokens by Wallet Adddress from Harmony</h1>
                 <h2>
                   We keep our transactions transparent and open to the public.
                   <strong> Powered by Covalent.</strong>
                 </h2>
 
                 <p className="dashboard-description">
-                  <strong>Main account: </strong> {allData?.data.address}
+                  <strong>Contract name: </strong>{' '}
+                  {contractDetails?.data.items[0].contract_name}
                 </p>
                 <p className="dashboard-description">
-                  <strong>Chain id: </strong> {allData?.data.chain_id}
+                  <strong>Contract Ticket Symbol: </strong>{' '}
+                  {contractDetails?.data.items[0].contract_ticker_symbol}
+                </p>
+
+                <p className="dashboard-description">
+                  <strong>Contract Type: </strong>{' '}
+                  {contractDetails?.data.items[0].type}
+                </p>
+                <p className="dashboard-description">
+                  <strong>Contract Address: </strong>{' '}
+                  {contractDetails?.data.items[0].contract_address}
+                </p>
+                <p className="dashboard-description">
+                  <strong>Contract Logo URL: </strong>{' '}
+                  {contractDetails?.data.items[0].logo_url}
+                </p>
+
+                <p className="dashboard-description">
+                  <strong>Contract decimals: </strong>{' '}
+                  {contractDetails?.data.items[0].contract_decimals}
+                </p>
+                <p className="dashboard-description">
+                  <strong>Chain id: </strong> 1666700000
                 </p>
                 <p className="dashboard-description">
                   <strong>Numb of items: </strong> {allData?.data.items.length}
                 </p>
                 <p className="dashboard-description">
-                  <strong>Update date: </strong> {allData?.data.next_update_at}
+                  <strong>Update date: </strong>{' '}
+                  {contractDetails?.data.updated_at}
                 </p>
                 <p className="dashboard-description">
                   <strong>Currency: </strong> {allData?.data.quote_currency}
@@ -117,7 +167,7 @@ export function Dashboard({ dataPie, covalentAllData }) {
                 <TableCell>NFT Name</TableCell>
                 <TableCell>NFT Description</TableCell>
                 <TableCell>Owner</TableCell>
-                <TableCell>View Details</TableCell>
+                <TableCell>Details</TableCell>
               </TableRow>
             </TableHead>
 
@@ -156,16 +206,16 @@ export function Dashboard({ dataPie, covalentAllData }) {
                       <TableCell>{legislator.owner}</TableCell>
 
                       <TableCell align="center">
-                        <a
+                        {/* <a
                           href={`https://mumbai.polygonscan.com/address/${legislator.contract_address}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                        >
-                          <ChevronRightIcon
-                            fontSize="large"
-                            style={{ color: 'blue' }}
-                          />
-                        </a>
+                        > */}
+                        <ChevronRightIcon
+                          fontSize="large"
+                          style={{ color: 'blue' }}
+                        />
+                        {/* </a> */}
                       </TableCell>
                     </TableRow>
                   )

@@ -73,37 +73,6 @@ export const ABI = [
     type: 'function',
   },
   {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'id',
-        type: 'uint256',
-      },
-      {
-        indexed: false,
-        internalType: 'string',
-        name: 'cid',
-        type: 'string',
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'price',
-        type: 'uint256',
-      },
-      {
-        indexed: false,
-        internalType: 'address',
-        name: 'seller',
-        type: 'address',
-      },
-    ],
-    name: 'BeatsCreated',
-    type: 'event',
-  },
-  {
     inputs: [
       {
         internalType: 'uint256',
@@ -111,7 +80,7 @@ export const ABI = [
         type: 'uint256',
       },
     ],
-    name: 'buyBeats',
+    name: 'buyBeat',
     outputs: [],
     stateMutability: 'payable',
     type: 'function',
@@ -129,9 +98,9 @@ export const ABI = [
         type: 'uint256',
       },
     ],
-    name: 'createBeats',
+    name: 'createBeat',
     outputs: [],
-    stateMutability: 'payable',
+    stateMutability: 'nonpayable',
     type: 'function',
   },
   {
@@ -253,11 +222,11 @@ export const ABI = [
   },
   {
     inputs: [],
-    name: '_ids',
+    name: '_totalBeats',
     outputs: [
       {
         internalType: 'uint256',
-        name: '_value',
+        name: '',
         type: 'uint256',
       },
     ],
@@ -266,11 +235,11 @@ export const ABI = [
   },
   {
     inputs: [],
-    name: '_totalBeats',
+    name: '_totalNFTs',
     outputs: [
       {
         internalType: 'uint256',
-        name: '',
+        name: '_value',
         type: 'uint256',
       },
     ],
@@ -304,7 +273,7 @@ export const ABI = [
         type: 'uint256',
       },
     ],
-    name: 'beatlist',
+    name: 'BeatList',
     outputs: [
       {
         internalType: 'uint256',
@@ -312,14 +281,14 @@ export const ABI = [
         type: 'uint256',
       },
       {
-        internalType: 'string',
-        name: 'cid',
-        type: 'string',
-      },
-      {
         internalType: 'bool',
         name: 'isSold',
         type: 'bool',
+      },
+      {
+        internalType: 'string',
+        name: 'cid',
+        type: 'string',
       },
       {
         internalType: 'uint256',
@@ -328,7 +297,7 @@ export const ABI = [
       },
       {
         internalType: 'address',
-        name: 'seller',
+        name: 'organizer',
         type: 'address',
       },
     ],
@@ -347,14 +316,14 @@ export const ABI = [
             type: 'uint256',
           },
           {
-            internalType: 'string',
-            name: 'cid',
-            type: 'string',
-          },
-          {
             internalType: 'bool',
             name: 'isSold',
             type: 'bool',
+          },
+          {
+            internalType: 'string',
+            name: 'cid',
+            type: 'string',
           },
           {
             internalType: 'uint256',
@@ -363,11 +332,11 @@ export const ABI = [
           },
           {
             internalType: 'address',
-            name: 'seller',
+            name: 'organizer',
             type: 'address',
           },
         ],
-        internalType: 'struct Beats.Beat[]',
+        internalType: 'struct SoundClick.BeatsObj[]',
         name: '',
         type: 'tuple[]',
       },

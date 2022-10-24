@@ -51,7 +51,7 @@ function AddBeat({ currentAccount, contract }) {
       if (metadata) {
         const url = metadata?.url.substring(7)
         const beat_cid_storage = `https://cloudflare-ipfs.com/ipfs/${url}`
-        const saveToContract = await contract.createBeats(
+        const saveToContract = await contract.createBeat(
           beat_cid_storage,
           price,
         )

@@ -11,6 +11,8 @@ yarn.lock
 
 # Firebase cache
 .firebase/
+build
+
 
 # Firebase config
 

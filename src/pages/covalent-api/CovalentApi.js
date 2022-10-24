@@ -36,27 +36,28 @@ function CovalentApi({
     }
 
     try {
+      // Get NFT transactions for contract
+      const chain_id = 1666700000
+      const contractDetails = await fetch(
+        `https://api.covalenthq.com/v1/${chain_id}/tokens/0xf8F1C045b730f918527D6257f02c4b77c57c6518/nft_transactions/1/?quote-currency=USD&format=JSON&key=ckey_ca8a590b11ff44d784ad75bd4ed`,
+      )
+      const contractDetailsJson = await contractDetails.json()
+      console.log(
+        '🚀 ~ file: CovalentApi.js ~ line 50 ~ getNFTFromCovalent ~ contractDetailsJson',
+        contractDetailsJson,
+      )
+
+      
       const nfts = await fetch(
         'https://api.covalenthq.com/v1/137/address/0xf4eA652F5B7b55f1493631Ea4aFAA63Fe0acc27C/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=ckey_ca8a590b11ff44d784ad75bd4ed',
       )
-      // const nfts = await fetch(
-      //   'https://api.covalenthq.com/v1/137/address/0x11760DB13aE3Aa5Bca17fC7D62172be2A2Ea9C11/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=ckey_ca8a590b11ff44d784ad75bd4ed',
-      // )
 
       const allNFTS = await nfts.json()
       console.log('allNFTS', allNFTS)
 
       if (allNFTS) {
         const allData = allNFTS?.data?.items[1]
-        console.log(
-          '🚀 ~ file: CovalentApi.js ~ line 49 ~ getNFTFromCovalent ~ allData',
-          allData,
-        )
         const onlyNFTs = allData?.nft_data
-        console.log(
-          '🚀 ~ file: CovalentApi.js ~ line 51 ~ getNFTFromCovalent ~ onlyNFTs',
-          onlyNFTs,
-        )
         setNfts(onlyNFTs)
         setItems(allNFTS?.data?.items)
         setLoading(false)
